@@ -1,0 +1,42 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* base styles */
+@layer base {
+  :root {
+    --bg: #ffffff;
+    --fg: #0f172a; /* slate-900 */
+    --muted: #475569; /* slate-600 */
+  }
+  .dark {
+    --bg: #0b1220; /* near-slate-950 */
+    --fg: #e5e7eb; /* slate-200 */
+    --muted: #94a3b8; /* slate-400 */
+  }
+
+  body {
+    @apply bg-[var(--bg)] text-[var(--fg)] antialiased;
+  }
+}
+
+/* reusable components */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 font-medium transition-colors;
+  }
+  .btn-primary {
+    @apply bg-brand text-white hover:bg-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/30;
+  }
+  .btn-ghost {
+    @apply text-brand hover:text-brand-dark;
+  }
+  .card {
+    @apply rounded-xl border border-slate-200/70 dark:border-white/10 bg-white dark:bg-white/5 shadow-soft;
+  }
+}
